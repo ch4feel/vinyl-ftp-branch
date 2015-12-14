@@ -1,0 +1,39 @@
+{
+  "name": "vinyl-ftp-branch",
+  "version": "0.1.8",
+  "description": "Change the destination folder to the git branch name and use external account file for vinyl-ftp",
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "echo \"no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ch4feel/vinyl-ftp-branch.git"
+  },
+  "homepage": "https://github.com/ch4feel/vinyl-ftp-branch",
+  "keywords": [
+    "gulp",
+    "vinyl-ftp",
+    "git",
+    "branch",
+    "ftp"
+  ],
+  "author": {
+    "name": "Keonjun Lee",
+    "email": "<ch4feel@naver.com>"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "gulp-util": "^3.0.7",
+    "object-assign": "^4.0.1"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "gulpfile.js"
+  ]
+}
