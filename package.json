@@ -1,6 +1,6 @@
 {
   "name": "vinyl-ftp-branch",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "Change the destination folder to the git branch name and use external account file for vinyl-ftp",
   "main": "index.js",
   "engines": {

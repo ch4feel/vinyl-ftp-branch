@@ -15,11 +15,11 @@ module.exports = function (options) {
     options.userKeyFile = options.userKeyFile || '.ftppass';
     options.userKey = options.userKey || 'key1';
 
-    if(fs.accessSync('.git/HEAD', fs.R_OK)) {
+    if(!fs.existsSync('.git/HEAD')) {
         throw new gutil.PluginError('vinyl-ftp-branch', 'Git repository required');
     }
 
-    if(fs.accessSync(options.userKeyFile , fs.R_OK)) {
+    if(!fs.existsSync(options.userKeyFile)) {
         throw new gutil.PluginError('vinyl-ftp-branch', 'User key file not exists');
     }
 
@@ -32,6 +32,11 @@ module.exports = function (options) {
         options.log = gutil.log;
 
     options.finalRemotePath = remotePath + branchName;
+
+    if(eval('ftppass.' + options.userKey) == undefined) {
+        throw new gutil.PluginError('vinyl-ftp-branch', 'User key not exists');
+    }
+
     options.user = eval('ftppass.'+ options.userKey + '.username');
     options.pass = eval('ftppass.'+ options.userKey + '.password');
 
