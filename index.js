@@ -40,12 +40,8 @@ module.exports = function (options) {
     options.user = eval('ftppass.'+ options.userKey + '.username');
     options.pass = eval('ftppass.'+ options.userKey + '.password');
 
-    delete options.remotePath;
     delete options.userKey;
     delete options.userKeyFile;
-
-    gutil.log('connecting FTP server', gutil.colors.green(options.host), 'with', gutil.colors.green(options.user));
-    gutil.log('uploading branch', gutil.colors.blue(branchName), 'to', gutil.colors.blue(options.finalRemotePath));
 
     return options;
 }
