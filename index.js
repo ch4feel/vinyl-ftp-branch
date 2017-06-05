@@ -39,6 +39,8 @@ module.exports = function (options) {
 
     options.user = eval('ftppass.'+ options.userKey + '.username');
     options.pass = eval('ftppass.'+ options.userKey + '.password');
+    options.host = eval('ftppass.'+ options.userKey + '.host');
+    options.port = eval('ftppass.'+ options.userKey + '.port');
 
     delete options.userKey;
     delete options.userKeyFile;
